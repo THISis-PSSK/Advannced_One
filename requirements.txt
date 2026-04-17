@@ -1,4 +1,4 @@
-﻿mediapipe==0.10.31
+﻿mediapipe==0.10.14
 opencv-python-headless==4.8.1.78
 numpy==1.23.5
 keras==2.12.0
