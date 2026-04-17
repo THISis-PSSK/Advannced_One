@@ -4,6 +4,158 @@
 
 Run this command in the terminal:
 
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+
+---
+
+## 2️⃣ Restart the Terminal
+
+After installing `uv`, restart your terminal
+OR run:
+
+source ~/.bashrc
+
+
+---
+
+## 3️⃣ Verify Installation
+
+Check that `uv` is installed correctly:
+
+uv --version
+
+
+---
+
+## 4️⃣ Create a Virtual Environment (Python 3.10)
+
+Create a virtual environment using Python 3.10:
+
+uv venv --python 3.10
+
+This will create a folder named `.venv`.
+
+
+---
+
+## 5️⃣ Activate the Virtual Environment
+
+Activate the environment before installing dependencies.
+
+source .venv/bin/activate
+
+
+---
+
+## 6️⃣ Confirm Python Version
+
+Make sure Python 3.10 is being used:
+
+python --version
+
+Expected output:
+
+Python 3.10.x
+
+⚠️ IMPORTANT:
+MediaPipe requires Python 3.10 for best compatibility.
+Do NOT use Python 3.11/3.12.
+
+
+---
+
+## 7️⃣ Install Project Dependencies
+
+Install all required packages:
+
+uv pip install -r requirements.txt
+
+
+---
+
+## 8️⃣ Verify Important Files
+
+Make sure these files exist in your project folder:
+
+- model.pkl
+- scaler.pkl
+- hand_landmarker.task
+- face_landmarker.task
+
+⚠️ If any of these are missing, the app will NOT work.
+
+
+---
+
+## 9️⃣ Collect Training Data (Optional)
+
+Run the training script to collect gesture data:
+
+python train_model.py
+
+👉 Choose:
+- n → New dataset
+- a → Add gestures
+- t → Train only
+
+
+---
+
+## 🔟 Run Gesture Detection (Desktop Version)
+
+python detect_gesture.py
+
+
+---
+
+## 1️⃣1️⃣ Run Web App (Streamlit)
+
+For browser-based UI:
+
+streamlit run app.py
+
+👉 Open in browser:
+http://localhost:8501
+
+
+---
+
+## ⚠️ TROUBLESHOOTING
+
+### Camera not opening
+- Check `/dev/video*` permissions (Linux)
+- Try different index inside `open_camera()`
+
+### Camera not closing
+- Press `q` in OpenCV window
+- OR ensure `cap.release()` is called
+
+### No detection happening
+- Ensure proper lighting
+- Keep hand inside frame
+- Check if model.pkl is trained correctly
+
+### Streamlit camera not working
+- Use `streamlit-webrtc` for browser camera
+- OpenCV camera works only locally
+
+
+---
+
+## ✅ You’re Done!
+
+Your system is now fully ready for:
+✔ Training gestures  
+✔ Real-time detection  
+✔ Web app deployment  
+
+🎉## 1️⃣ Install `uv`
+
+`uv` is a fast Python package and environment manager.
+
+Run this command in the terminal:
+
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
