@@ -5,7 +5,7 @@ av
 mediapipe==0.10.31
 opencv-python-headless==4.8.1.78
 
-numpy==1.23.5
+numpy==1.26.0
 pandas
 scikit-learn
 joblib
